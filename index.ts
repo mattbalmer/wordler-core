@@ -1,4 +1,4 @@
-import { Wordle } from './wordle/wordle';
+import { Wordle } from './wordle';
 
 export const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
 
