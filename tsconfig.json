@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "skipLibCheck": true,
+        "target": "es6",
+        "module": "commonjs",
+        "outDir": "./dist/",
+        "baseUrl": "./source",
+        "lib": ["es2018"]
+    },
+    "include": [
+        "./source/**/*"
+    ]
+}
