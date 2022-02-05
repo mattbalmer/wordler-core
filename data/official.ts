@@ -1,4 +1,4 @@
-export const OFFICIAL_WORDS = [
+export const OFFICIAL_WORDS = Object.freeze([
   'aahed',
   'aalii',
   'aargh',
@@ -12971,4 +12971,4 @@ export const OFFICIAL_WORDS = [
   'zygon',
   'zymes',
   'zymic',
-];
+]);

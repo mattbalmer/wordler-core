@@ -1,3 +1,5 @@
+import { OFFICIAL_WORDS } from './data/official';
+
 export enum PLACEMENT {
   ABSENT = 'ABSENT',
   PRESENT = 'PRESENT',
@@ -21,7 +23,7 @@ export const MAX_GUESSES = 6;
 export const WORD_LENGTH = 5;
 
 export class Wordle {
-  words: string[];
+  allowedGuesses: readonly string[];
 
   maxGuesses: number;
 
@@ -34,14 +36,14 @@ export class Wordle {
     return last?.results.every(e => e === PLACEMENT.CORRECT);
   }
 
-  constructor(answer, config: { maxGuesses?: number, words: string[] }) {
+  constructor(answer, config: { maxGuesses?: number, allowedGuesses?: string[] } = {}) {
     if (answer.length !== WORD_LENGTH) {
       throw `answer must be ${WORD_LENGTH} characters long`
     }
     this.answer = answer.toLowerCase();
 
     this.maxGuesses = config.maxGuesses || MAX_GUESSES;
-    this.words = config.words;
+    this.allowedGuesses = Object.freeze(config.allowedGuesses || OFFICIAL_WORDS.slice(0));
   }
 
   guess(guess: string): GuessResult {

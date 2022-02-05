@@ -1,4 +1,4 @@
-export const SAMPLE_100_WORDS = [
+export const SAMPLE_100_WORDS = Object.freeze([
   'wrung',
   'treat',
   'sound',
@@ -99,4 +99,4 @@ export const SAMPLE_100_WORDS = [
   'disks',
   'picky',
   'neigh',
-]
+]);

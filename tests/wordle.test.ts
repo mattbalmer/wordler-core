@@ -1,18 +1,18 @@
 import { describe, it } from 'mocha';
 import { expect } from 'chai'
-import { PLACEMENT, Wordle } from '../source/wordle';
+import { PLACEMENT, Wordle } from '../wordle';
 
 describe('Wordle', () => {
   it('should init word', () => {
     const wordle = new Wordle('bonks', {
-      words: [],
+      allowedGuesses: [],
     });
     expect(wordle.answer).to.deep.equal('bonks');
   });
 
   it('guess() should return result', () => {
     const wordle = new Wordle('bonks', {
-      words: [],
+      allowedGuesses: [],
     });
 
     const result = wordle.guess('BREAK');
@@ -27,7 +27,7 @@ describe('Wordle', () => {
 
   it('guess() should store the evaluation', () => {
     const wordle = new Wordle('bonks', {
-      words: [],
+      allowedGuesses: [],
     });
 
     wordle.guess('BREAK');
