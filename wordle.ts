@@ -36,7 +36,10 @@ export class Wordle {
     return last?.results.every(e => e === PLACEMENT.CORRECT);
   }
 
-  constructor(answer, config: { maxGuesses?: number, allowedGuesses?: string[] } = {}) {
+  constructor(answer, config: {
+    maxGuesses?: number,
+    allowedGuesses?: string[] | readonly string[]
+  } = {}) {
     if (answer.length !== WORD_LENGTH) {
       throw `answer must be ${WORD_LENGTH} characters long`
     }
