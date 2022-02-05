@@ -1,11 +1,11 @@
 {
     "name": "wordler-core",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "description": "Framework for testing Wordle solvers",
     "author": "Matt Balmer <contact@mattbalmer.com>",
     "license": "MIT",
-    "main": "./dist/index.js",
-    "types": "./dist/index.d.ts",
+    "main": "./index.js",
+    "types": "./index.d.ts",
     "repository": {
         "type": "git",
         "url": "https://github.com/mattbalmer/wordler-core"
