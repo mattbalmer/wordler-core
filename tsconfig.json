@@ -6,7 +6,6 @@
         "target": "es6",
         "declaration": true,
         "module": "commonjs",
-        "outDir": "./dist/",
         "baseUrl": "./",
         "lib": ["es2018"]
     },
