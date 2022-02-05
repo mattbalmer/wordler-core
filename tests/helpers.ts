@@ -1,17 +1,20 @@
 import { MAX_GUESSES, Wordle } from '../wordle';
 import { BaseRecommendation, Wordler } from '../index';
 import { OFFICIAL_WORDS } from '../data/official';
+import { SAMPLE_100_WORDS } from '../data/sample-100';
 
 export const testSolver = <T extends BaseRecommendation<{}> = BaseRecommendation<{}>>
-(wordler: Wordler<T>, words: string[]): {
+(wordler: Wordler<T>, words?: string[] | readonly string[]): {
   duration: number,
   distribution: Record<number, number>,
   average: number
 } => {
   const results = [];
 
+  const testWords = Object.freeze(words || SAMPLE_100_WORDS);
+
   const start = Date.now();
-  words.forEach(word => {
+  testWords.forEach(word => {
     const wordle = new Wordle(word, {
       maxGuesses: MAX_GUESSES,
       allowedGuesses: OFFICIAL_WORDS.slice(0),
